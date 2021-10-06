@@ -8,7 +8,6 @@ package bo.edu.ucb.est.modelo;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
-import bo.edu.ucb.est.interfaz.Bienvenido;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -36,7 +35,6 @@ public class Cliente extends TelegramLongPollingBot {
     double monto;
     boolean S;
     Scanner leer =new Scanner(System.in); 
-    Bienvenido uno=new Bienvenido();
     
     public Cliente(String nombre, String codigoCliente, String pinSeguridad) {
         this.nombre = nombre;
@@ -52,6 +50,7 @@ public class Cliente extends TelegramLongPollingBot {
         else
         {
             int i;
+            Mensaje(update, "Elija una cuenta.");
             for (i = 0; i < cuentas.size(); i++) {
                 Cuenta cuent = cuentas.get(i);
                 cuent.Mostrar(i+1, update);
@@ -74,7 +73,6 @@ public class Cliente extends TelegramLongPollingBot {
                 case 2:
                     //cuent.MostrarTodo(Eleccion-1, update);
                     do{      
-                        uno.retirar();
                         S=cuent.retirar(monto);
                         if(S==false){
                             Mensaje(update,"Error.");
@@ -86,7 +84,6 @@ public class Cliente extends TelegramLongPollingBot {
                 case 3:
                     //cuent.MostrarTodo(Eleccion-1, update);
                     do{
-                        uno.depositar();
                         S=cuent.depositar(monto);
                         if(S==false){
                             Mensaje(update,"Error.");

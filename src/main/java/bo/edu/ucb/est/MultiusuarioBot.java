@@ -5,12 +5,10 @@
  */
 package bo.edu.ucb.est;
 
-import bo.edu.ucb.est.eleccion.Eleccion;
 import bo.edu.ucb.est.modelo.Banco;
 import bo.edu.ucb.est.modelo.Cliente;
 import bo.edu.ucb.est.modelo.Cuenta;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -49,7 +47,6 @@ public class MultiusuarioBot extends TelegramLongPollingBot {
     private Banco fortuna = new Banco("BANCO FORTUNA");
     private  int NumeroCuentas=10000;
     private Cliente cliente;
-    Eleccion eleccion= new Eleccion();
     @Override
     public String getBotToken() {
         return "2020219176:AAFcBXEiFmqsjo0Rn4Dopt2P4G4PatcuG1U" ; //To change body of generated methods, choose Tools | Templates.
@@ -257,7 +254,7 @@ public class MultiusuarioBot extends TelegramLongPollingBot {
                                 }
                                 else
                                 {
-                                    Mensaje(update, "Cuenta sin Fondos, se le llevará al menú principal.");
+                                    Mensaje(update, "Cuenta sin fondos, se le llevará al menú principal.");
                                     Mensaje(update, "Elige una opción:\n\n1. Ver Saldo.\n2. Retirar dinero.\n3. Depositar dinero.\n4. Crear Cuenta.\n5. Salir.");
                                     EstadoUsuario.put(id, "5");
                                 }

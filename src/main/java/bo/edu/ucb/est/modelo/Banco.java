@@ -7,7 +7,6 @@ package bo.edu.ucb.est.modelo;
 
 import java.util.ArrayList;
 import java.util.List;
-import bo.edu.ucb.est.interfaz.Bienvenido;
 /**
  *
  * @author ecampohermoso
@@ -15,7 +14,6 @@ import bo.edu.ucb.est.interfaz.Bienvenido;
 public class Banco {
     private String nombre;
     private List<Cliente> clientes;
-    Bienvenido uno=new Bienvenido();
     
     public Banco(String nombre) {
         this.nombre = nombre;
@@ -46,7 +44,6 @@ public class Banco {
                 return cli;
             }
         }
-        uno.CredencialesIncorrectas();
         return null;
     }
 }

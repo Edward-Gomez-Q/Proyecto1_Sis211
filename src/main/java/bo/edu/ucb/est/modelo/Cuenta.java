@@ -5,8 +5,6 @@
  */
 package bo.edu.ucb.est.modelo;
 
-import bo.edu.ucb.est.interfaz.Bienvenido;
-import java.util.List;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -30,7 +28,6 @@ public class Cuenta extends TelegramLongPollingBot {
     private String moneda;
     private String tipo;
     private double saldo;
-    Bienvenido uno=new Bienvenido();
     public Cuenta(int Codigo,String moneda, String tipo, double saldoInicial) {
         this.Codigo=Codigo;
         this.moneda = moneda;
